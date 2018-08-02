@@ -42,7 +42,17 @@ def board():
     #win.close()
 
 
-def point():
+def tic_tac_toe():
+
+    import sys
+
+    grid = []
+    for row in range(N):
+        grid.append([])
+        for column in range(N):
+            grid[row].append(0)
+    print(grid)
+
     for i in range(0, N**2):
         print('Player 1 Go!')
         Player1 = win.getMouse()
@@ -54,18 +64,191 @@ def point():
         Move1.setSize(36)
         Move1.draw(win)
 
+        if (100 < X1_Value < 200) and (100 < Y1_Value < 200):
+            grid[0].pop(0)
+            grid[0].insert(0, 1)
+            print(grid)
+            #print(list)
+
+        elif (200 < X1_Value < 300) and (100 < Y1_Value < 200):
+            grid[0].pop(1)
+            grid[0].insert(1, 1)
+            print(grid)
+            #print(list)
+
+        elif (300 < X1_Value < 400) and (100 < Y1_Value < 200):
+            grid[0].pop(2)
+            grid[0].insert(2, 1)
+            print(grid)
+            #print(list)
+
+        elif (100 < X1_Value < 200) and (200 < Y1_Value < 300):
+            grid[1].pop(0)
+            grid[1].insert(0, 1)
+            print(grid)
+            #print(list)
+
+        elif (200 < X1_Value < 300) and (200 < Y1_Value < 300):
+            grid[1].pop(1)
+            grid[1].insert(1, 1)
+            print(grid)
+            #print(list)
+
+        elif (300 < X1_Value < 400) and (200 < Y1_Value < 300):
+            grid[1].pop(2)
+            grid[1].insert(2, 1)
+            print(grid)
+            #print(list)
+
+
+        elif (100 < X1_Value < 200) and (300 < Y1_Value < 400):
+            grid[2].pop(0)
+            grid[2].insert(0, 1)
+            print(grid)
+            #print(list)
+
+        elif (200 < X1_Value < 300) and (300 < Y1_Value < 400):
+            grid[2].pop(1)
+            grid[2].insert(1, 1)
+            print(grid)
+            #print(list)
+
+        elif (300 < X1_Value < 400) and (300 < Y1_Value < 400):
+            grid[2].pop(2)
+            grid[2].insert(2, 1)
+            print(grid)
+
+        for code in grid[0]:
+
+            if (grid[0][0] and grid[0][1] and grid[0][2]) == 1:
+                print('Player 1 Wins!')
+                sys.exit('The game is over!')
+
+            if (grid[1][1] and grid[1][1] and grid[1][2]) == 1:
+                print('Player 1 Wins!')
+                sys.exit('The game is over!')
+
+            if (grid[2][0] and grid[2][1] and grid[2][2]) == 1:
+                print('Player 1 Wins!')
+                sys.exit('The game is over!')
+
+            if (grid[0][0] and grid[1][0] and grid[2][0]) == 1:
+                print('Player 1 Wins!')
+                sys.exit('The game is over!')
+
+            if (grid[0][1] and grid[1][1] and grid[2][1]) == 1:
+                print('Player 1 Wins!')
+                sys.exit('The game is over!')
+
+            if (grid[0][2] and grid[1][2] and grid[2][2]) == 1:
+                print('Player 1 Wins!')
+                sys.exit('The game is over!')
+
+            if (grid[0][0] and grid[1][1] and grid[2][2]) == 1:
+                print('Player 1 Wins!')
+                sys.exit('The game is over!')
+
+            if (grid[0][2] and grid[1][1] and grid[2][0]) == 1:
+                print('Player 1 Wins!')
+                sys.exit('The game is over!')
+
         print('Player 2 Go!')
         Player2 = win.getMouse()
         X2_Value = Player2.getX()
         Y2_Value = Player2.getY()
         print(X2_Value, Y2_Value)
 
-        Move2 = Text(Point(X2_Value, Y2_Value), "o")
-        Move2.setSize(36)
-        Move2.draw(win)
+        Move1 = Text(Point(X2_Value, Y2_Value), "o")
+        Move1.setSize(36)
+        Move1.draw(win)
 
-        break
-    #win.close()
+        if (100 < X2_Value < 200) and (100 < Y2_Value < 200):
+            grid[0].pop(0)
+            grid[0].insert(0, 2)
+            print(grid)
+            #print(list)
+
+        elif (200 < X2_Value < 300) and (100 < Y2_Value < 200):
+            grid[0].pop(1)
+            grid[0].insert(1, 2)
+            print(grid)
+            #print(list)
+
+        elif (300 < X2_Value < 400) and (100 < Y2_Value < 200):
+            grid[0].pop(2)
+            grid[0].insert(2, 2)
+            print(grid)
+            #print(list)
+
+        elif (100 < X2_Value < 200) and (200 < Y2_Value < 300):
+            grid[1].pop(0)
+            grid[1].insert(0, 2)
+            print(grid)
+            #print(list)
+
+        elif (200 < X2_Value < 300) and (200 < Y2_Value < 300):
+            grid[1].pop(1)
+            grid[1].insert(1, 2)
+            print(grid)
+            #print(list)
+
+        elif (300 < X2_Value < 400) and (200 < Y2_Value < 300):
+            grid[1].pop(2)
+            grid[1].insert(2, 2)
+            print(grid)
+            #print(list)
+
+
+        elif (100 < X2_Value < 200) and (300 < Y2_Value < 400):
+            grid[2].pop(0)
+            grid[2].insert(0, 2)
+            print(grid)
+            #print(list)
+
+        elif (200 < X2_Value < 300) and (300 < Y2_Value < 400):
+            grid[2].pop(1)
+            grid[2].insert(1, 2)
+            print(grid)
+            #print(list)
+
+        elif (300 < X2_Value < 400) and (300 < Y2_Value < 400):
+            grid[2].pop(2)
+            grid[2].insert(2, 2)
+            print(grid)
+
+        for code in grid[0]:
+
+            if (grid[0][0] and grid[0][1] and grid[0][2]) == 2:
+                print('Player 2 Wins!')
+                sys.exit('The game is over!')
+
+            if (grid[1][1] and grid[1][1] and grid[1][2]) == 2:
+                print('Player 2 Wins!')
+                sys.exit('The game is over!')
+
+            if (grid[2][0] and grid[2][1] and grid[2][2]) == 2:
+                print('Player 2 Wins!')
+                sys.exit('The game is over!')
+
+            if (grid[0][0] and grid[1][0] and grid[2][0]) == 2:
+                print('Player 2 Wins!')
+                sys.exit('The game is over!')
+
+            if (grid[0][1] and grid[1][1] and grid[2][1]) == 2:
+                print('Player 2 Wins!')
+                sys.exit('The game is over!')
+
+            if (grid[0][2] and grid[1][2] and grid[2][2]) == 2:
+                print('Player 2 Wins!')
+                sys.exit('The game is over!')
+
+            if (grid[0][0] and grid[1][1] and grid[2][2]) == 2:
+                print('Player 2 Wins!')
+                sys.exit('The game is over!')
+
+            if (grid[0][2] and grid[1][1] and grid[2][0]) == 2:
+                print('Player 2 Wins!')
+                sys.exit('The game is over!')
 
 def rect():
     rectangle = []
@@ -74,6 +257,13 @@ def rect():
         print('True')
     else:
         print('False')
+
+
+# def win_box():
+#     # if these things are in the list, they win
+#     if box in list:
+#         if box == '11x' and box = '12x' and '13x'
+#             print(Player 1 Wins!)
 
 # Def box():
 #     boxes = []
@@ -84,8 +274,10 @@ def rect():
 
 
 board()
-point()
-rect()
+tic_tac_toe()
+
+
+
 
 
 # def main():
