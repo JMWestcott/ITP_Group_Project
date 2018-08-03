@@ -69,26 +69,29 @@ def tic_tac_toe():
                     grid[b].insert(a, 1)
                     print(grid)
 
-        for code in grid[0]:
+        #for code in grid[0]:
 
             # columns
-            for f in range (0, N):
-                for e in range (0, N):
-                    if (grid[e][f]) * N == 1:
-                        print('Player 1 Wins!')
-                        sys.exit('The game is over!')
+        for f in range (0, N):
+            for e in range (0, N):
+                if grid[e][f] * N == 1:
+                    print('Player 1 Wins!')
+                    sys.exit('The game is over!')
 
-            # if grid[0][0] == 1 and grid[0][1] == 1 and grid[0][2] == 1:
-            #     print('Player 1 Wins!')
-            #     sys.exit('The game is over!')
-            #
-            # elif grid[1][0] == 1 and grid[1][1] == 1 and grid[1][2] == 1:
-            #     print('Player 1 Wins!')
-            #     sys.exit('The game is over!')
-            #
-            # elif grid[2][0] == 1 and grid[2][1] == 1 and grid[2][2] == 1:
-            #     print('Player 1 Wins!')
-            #     sys.exit('The game is over!')
+
+        for code in grid[0]:
+            # rows
+            if grid[0][0] == 1 and grid[0][1] == 1 and grid[0][2] == 1:
+                print('Player 1 Wins!')
+                sys.exit('The game is over!')
+
+            elif grid[1][0] == 1 and grid[1][1] == 1 and grid[1][2] == 1:
+                print('Player 1 Wins!')
+                sys.exit('The game is over!')
+
+            elif grid[2][0] == 1 and grid[2][1] == 1 and grid[2][2] == 1:
+                print('Player 1 Wins!')
+                sys.exit('The game is over!')
 
             # rows
             # for h in range (0, N):
@@ -97,17 +100,19 @@ def tic_tac_toe():
             #             print('Player 1 Wins!')
             #             sys.exit('The game is over!')
 
-            if grid[0][0] == 1 and grid[1][0] == 1 and grid[2][0] == 1:
-                print('Player 1 Wins!')
-                sys.exit('The game is over!')
 
-            elif grid[0][1] == 1 and grid[1][1] == 1 and grid[2][1] == 1:
-                print('Player 1 Wins!')
-                sys.exit('The game is over!')
-
-            elif grid[0][2] == 1 and grid[1][2] == 1 and grid[2][2] == 1:
-                print('Player 1 Wins!')
-                sys.exit('The game is over!')
+            # # columns
+            # if grid[0][0] == 1 and grid[1][0] == 1 and grid[2][0] == 1:
+            #     print('Player 1 Wins!')
+            #     sys.exit('The game is over!')
+            #
+            # elif grid[0][1] == 1 and grid[1][1] == 1 and grid[2][1] == 1:
+            #     print('Player 1 Wins!')
+            #     sys.exit('The game is over!')
+            #
+            # elif grid[0][2] == 1 and grid[1][2] == 1 and grid[2][2] == 1:
+            #     print('Player 1 Wins!')
+            #     sys.exit('The game is over!')
 
             # diagonals
             if grid[0][0] == 1 and grid[1][1] == 1 and grid[2][2] == 1:
@@ -168,7 +173,7 @@ def tic_tac_toe():
 
         for code in grid[0]:
 
-            # columns
+            # rows
             if grid[0][0] == 2 and grid[0][1] == 2 and grid[0][2] == 2:
                 print('Player 2 Wins!')
                 sys.exit('The game is over!')
@@ -181,7 +186,7 @@ def tic_tac_toe():
                 print('Player 2 Wins!')
                 sys.exit('The game is over!')
 
-            # rows
+            # columns
             elif grid[0][0] == 2 and grid[1][0] == 2 and grid[2][0] == 2:
                 print('Player 2 Wins!')
                 sys.exit('The game is over!')

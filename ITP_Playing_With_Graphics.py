@@ -118,7 +118,7 @@ def tic_tac_toe():
             grid[2].insert(2, 1)
             print(grid)
 
-        for code in grid[0]:
+        for code in grid[0:N]:
 
             if (grid[0][0] and grid[0][1] and grid[0][2]) == 1:
                 print('Player 1 Wins!')
@@ -216,7 +216,7 @@ def tic_tac_toe():
             grid[2].insert(2, 2)
             print(grid)
 
-        for code in grid[0]:
+        for code in grid[0:N]:
 
             if (grid[0][0] and grid[0][1] and grid[0][2]) == 2:
                 print('Player 2 Wins!')

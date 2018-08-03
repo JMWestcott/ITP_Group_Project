@@ -1,5 +1,3 @@
-# Tic Tac Toe Final Code
-
 from graphics import *
 
 board_size = input('Please enter the board size (3-10): ')
@@ -162,6 +160,7 @@ def tic_tac_toe():
 
 # Determine if it's a tie
 # Show on the graphics who won
+# make sure they can't play more than once in a box
 
 
 
