@@ -1,12 +1,31 @@
 from graphics import *
 
+Player_1 = input('Player 1 print your name: ')
+color_1 = input('Player 1 pick a color: ')
+Player_2 = input('Player 2 Print your name: ')
+color_2 = input('Player 2 pick a color: ')
 board_size = input('Please enter the board size (3-10): ')
 N = int(board_size)
 length = (N * 100 + 200)
-
 win = GraphWin("Tic Tac Toe", length, length)
 
 def board():
+
+    play1 = Text(Point(100, 20), 'Player 1: ')
+    play1.setSize(18)
+    play1.draw(win)
+    name1 = Text(Point(100, 50), Player_1)
+    name1.setSize(22)
+    name1.setTextColor(color_1)
+    name1.draw(win)
+
+    play2 = Text(Point(((N+1) * 100), 20), 'Player 2: ')
+    play2.setSize(18)
+    play2.draw(win)
+    name2 = Text(Point(((N+1) * 100), 50), Player_2)
+    name2.setSize(22)
+    name2.setTextColor(color_2)
+    name2.draw(win)
 
     import sys
     while True:
@@ -38,24 +57,35 @@ def tic_tac_toe():
         grid[row] = [0] * N
     print(grid)
 
-    for i in range(0, N**2):
+    while True:
+        #sum(map(sum, grid)) < ((N*N/2)*3)-1
+        # if sum(map(sum, grid)) < ((N*N/2)*3):
+        #if (N%2 == 0 and i <= (N*N)/2) or (N%2 != 0 and i < (N*N/2)):
         print('Player 1 Go!')
         Player1 = win.getMouse()
         X1_Value = Player1.getX()
         Y1_Value = Player1.getY()
         print(X1_Value, Y1_Value)
 
-        Move1 = Text(Point(X1_Value, Y1_Value), "X")
-        Move1.setSize(36)
-        Move1.draw(win)
-
+        
+        Move1 = None
 # to record where the 'X' is played and insert a 1 in that index within our matrix
         for b in range(0, N):
             for a in range(0, N):
                 if ((100 + 100 * a) < X1_Value < (200 + 100 * a)) and ((100 + 100 * b) < Y1_Value < (200 + 100 * b)):
-                    grid[b].pop(a)
-                    grid[b].insert(a, 1)
-                    print(grid)
+                    if not grid[b][a]:
+                        grid[b][a]
+                        grid[b].pop(a)
+                        grid[b].insert(a, 1)
+                        print(grid)
+                        Move1 = Text(Point(X1_Value, Y1_Value), "X")
+                        Move1.setSize(36)
+                        Move1.setTextColor(color_1)
+                        Move1.draw(win)
+
+
+
+        # if move isn't valid - loop around so they can try again
 
 # to determine if the player 1 won
         # columns
@@ -98,6 +128,10 @@ def tic_tac_toe():
                 sys.exit('The game is over!')
 
 
+        if sum(map(sum, grid)) == ((N*N/2)*3)-0.5:
+            break
+
+
         print('Player 2 Go!')
         Player2 = win.getMouse()
         X2_Value = Player2.getX()
@@ -106,7 +140,10 @@ def tic_tac_toe():
 
         Move2 = Text(Point(X2_Value, Y2_Value), "O")
         Move2.setSize(36)
+        Move2.setTextColor(color_2)
         Move2.draw(win)
+
+
 
 # to record where the 'O' is played and insert a 2 in that index within our matrix
         for d in range(0, N):
@@ -152,11 +189,16 @@ def tic_tac_toe():
         rev_diag2 = []
         for g in range(0, N):
             if grid[g][N - 1 - g] == 2:
-                rev_diag2.append(2)
+                    rev_diag2.append(2)
             if rev_diag2 == ([2] * N):
                 print('Player 2 Wins!')
                 sys.exit('The game is over!')
 
+        if sum(map(sum, grid)) == ((N*N/2)*3):
+            break
+
+    print("Oops, it's a tie...")
+    sys.exit('This game is over!')
 
 # Determine if it's a tie
 # Show on the graphics who won
