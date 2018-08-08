@@ -12,8 +12,6 @@ color_2 = input('Player 2 pick a color: ')
 N = int(input('Please enter the board size: '))
 if N < 3:
     sys.exit('Error: please enter a valid integer larger than 2')
-if type(N) != int:
-    sys.exit('Error: please enter a valid integer larger than 2')
 
 # define the board length in relation to N in pixels
 length = (N * 100 + 200)
