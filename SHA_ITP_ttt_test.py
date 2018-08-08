@@ -13,7 +13,7 @@ N = int(input('Please enter the board size: '))
 if N < 3:
     sys.exit('Error: please enter an integer larger than 2')
 if type(N) != int:
-     sys.exit('Error: please enter a valid integer larger than 2')
+    sys.exit('Error: please enter a valid integer larger than 2')
 
 
 length = (N * 100 + 200)
